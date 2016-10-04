@@ -1,0 +1,13 @@
+    _                       _               
+   (_)                     | |              
+    _ _   _ _ __ ___  _ __ | |__   _____  __
+   | | | | | '_ ` _ \| '_ \| '_ \ / _ \ \/ /
+   | | |_| | | | | | | |_) | |_) | (_) >  < 
+   | |\__,_|_| |_| |_| .__/|_.__/ \___/_/\_\
+  _/ |               | |                    
+ |__/                |_|       ver: _VERSION_  
+                                by: function61.com
+
+To resume working, run: $ tmux attach
+(for first time use, just run $ tmux)
+
