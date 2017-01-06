@@ -1,8 +1,11 @@
-FROM joonas/alpine:f4fddc471ec2
-MAINTAINER joonas@joonas.fi, https://joonas.fi
+FROM alpine/3.5
 
-# Install OpenSSH and tmux   TODO: how to purge apk cache?
-RUN apk --update add openssh tmux
+# Install OpenSSH and tmux
+RUN apk add --no-cache openssh tmux
+
+EXPOSE 22
+
+CMD /run.sh
 
 ADD bin/run.sh /run.sh
 
@@ -16,7 +19,3 @@ ADD conf/tmux.conf /root/.tmux.conf
 ADD conf/motd /etc/motd
 ADD conf/ssh.rc /root/.ssh/rc
 ADD VERSION /VERSION
-
-EXPOSE 22
-
-CMD /run.sh
