@@ -1,4 +1,4 @@
-FROM alpine/3.5
+FROM alpine:3.5
 
 # Install OpenSSH and tmux
 RUN apk add --no-cache openssh tmux
