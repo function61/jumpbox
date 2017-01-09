@@ -10,31 +10,71 @@ to restart your laptop or your internet connection disconnects you from your SSH
 
 See good looking tutorial on tmux: [A tmux Primer](https://danielmiessler.com/study/tmux/)
 
-	    _                       _
-	   (_)                     | |
-	    _ _   _ _ __ ___  _ __ | |__   _____  __
-	   | | | | | '_ ` _ \| '_ \| '_ \ / _ \ \/ /
-	   | | |_| | | | | | | |_) | |_) | (_) >  <
-	   | |\__,_|_| |_| |_| .__/|_.__/ \___/_/\_\
-	  _/ |               | |
-	 |__/                |_|       
-	                                by: function61.com
+```
+    _                       _
+   (_)                     | |
+    _ _   _ _ __ ___  _ __ | |__   _____  __
+   | | | | | '_ ` _ \| '_ \| '_ \ / _ \ \/ /
+   | | |_| | | | | | | |_) | |_) | (_) >  <
+   | |\__,_|_| |_| |_| .__/|_.__/ \___/_/\_\
+  _/ |               | |
+ |__/                |_|       
+                                by: function61.com
+```
+
 
 Running
 -------
 
 Run:
 
-	$ docker run -d -p 2222:22 -e "SSH_PUBKEY=..." --name jumpbox joonas/jumpbox:VERSION_TAG
+```
+$ docker run -d -p 2222:22 -e "SSH_PUBKEY=..." --name jumpbox fn61/jumpbox:VERSION_TAG
+```
 
-For VERSION_TAG, see [DockerHub](https://hub.docker.com/r/joonas/jumpbox/tags/).
+For VERSION_TAG, see [DockerHub](https://hub.docker.com/r/fn61/jumpbox/tags/).
 I'm not fond of the "latest" tag as you never know what you'll be getting.
+
 
 Connect
 -------
 
-Now you can connect to the IP of your Docker host on port 2222. The jumpbox listens there.
+Now you can connect with SSH to the IP of your Docker host on port 2222.
 
-Then run
+Then run:
 
-	$ tmux
+```
+$ tmux attach
+```
+
+(or if you are connecting first time, i.e. nothing to attach to, run just `$ tmux`)
+
+
+Commands
+--------
+
+tmux is configured with non-default hotkey: `Ctrl + a`.
+
+How to read the table below: for `New window` your command is `Hotkey + c` => `Ctrl + a + c`
+(hit `Ctrl + a`, release both keys and then `c`).
+
+|          |                                                 |                        | 
+|----------|-------------------------------------------------|------------------------| 
+| Category | Command                                         | Shortcut: Hotkey + KEY | 
+| window   | New window                                      | c                      | 
+| window   | Destroy window by destroying all panels in it.. |                        | 
+| window   | Rename                                          | ,                      | 
+| session  | New                                             | :new                   | 
+| session  | Rename                                          | :rename                | 
+| session  | Detach ("exit from tmux")                       | d                      | 
+| session  | Switch between sessions                         | s                      | 
+| panel    | Destroy panel                                   | x                      | 
+| panel    | Split vertically                                | ”                      | 
+| panel    | Split horizontally                              | %                      | 
+| panel    | Change between visible panels                   | arrow keys             | 
+| panel    | History: page up                                | page up                | 
+| panel    | History: page down                              | page down              | 
+
+
+
+For more complete cheat sheet, go to [tmuxcheatsheet.com](https://tmuxcheatsheet.com/)
