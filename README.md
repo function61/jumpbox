@@ -78,3 +78,13 @@ How to read the table below: for `New window` your command is `Hotkey + c` => `C
 
 
 For more complete cheat sheet, go to [tmuxcheatsheet.com](https://tmuxcheatsheet.com/)
+
+
+Support / contact
+-----------------
+
+Basic support (no guarantees) for issues / feature requests via GitHub issues.
+
+Paid support is available via [function61.com/consulting](https://function61.com/consulting/)
+
+Contact options (email, Twitter etc.) at [function61.com](https://function61.com/)
